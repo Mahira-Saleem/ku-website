@@ -1,0 +1,155 @@
+
+.portal {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  min-height: 100vh;
+}
+
+/* ---------- Left side ---------- */
+.side {
+  background: var(--text);
+  color: var(--bg);
+  padding: 30px clamp(20px, 4vw, 60px) 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+}
+
+.back { opacity: 0.7; transition: opacity 0.3s; }
+.back:hover { opacity: 1; }
+
+.brand { display: flex; align-items: center; gap: 14px; }
+.brand strong { font-size: 1.2rem; font-weight: 800; }
+.brand p { opacity: 0.7; }
+
+.seal {
+  width: 52px; height: 52px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  font-weight: 800;
+  background: var(--green);
+  color: var(--text);
+}
+
+.side h1 {
+  font-size: clamp(2.4rem, 5.5vw, 5rem);
+  font-weight: 800;
+  line-height: 0.92;
+  letter-spacing: -0.04em;
+  text-transform: uppercase;
+}
+
+.notice {
+  padding: 16px 20px;
+  border: 1px solid rgba(128, 128, 128, 0.4);
+  border-left: 4px solid var(--green);
+  font-size: 0.95rem;
+}
+.notice .mono { color: var(--green); }
+
+.label { color: var(--green); }
+
+.links { list-style: none; padding: 0; }
+.links li { border-top: 1px solid rgba(128, 128, 128, 0.35); }
+.links li:last-child { border-bottom: 1px solid rgba(128, 128, 128, 0.35); }
+.links a {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 14px 0;
+  transition: padding-left 0.3s, color 0.3s;
+}
+.links a:hover { padding-left: 14px; color: var(--green); }
+.links i { font-style: normal; }
+
+.badge {
+  background: var(--green);
+  color: var(--text);
+  padding: 2px 8px;
+  border-radius: 20px;
+  margin-left: auto;
+  margin-right: 10px;
+  align-self: center;
+}
+
+.btn.light { background: var(--bg); color: var(--text); text-align: center; }
+.small { font-size: 0.85rem; opacity: 0.75; }
+.small a { text-decoration: underline; }
+.copy { margin-top: auto; opacity: 0.5; }
+
+/* ---------- Right side ---------- */
+.main {
+  padding: 50px clamp(20px, 5vw, 80px);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: relative;
+  max-width: 700px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.ring { width: 150px; height: 150px; margin: 0 auto; animation: spin 22s linear infinite; }
+.ring text { font-family: 'Space Mono', monospace; font-size: 11.5px; letter-spacing: 2px; fill: var(--text); }
+.ring-center {
+  position: absolute;
+  top: 50px; left: 50%;
+  width: 150px; margin-left: -75px;
+  height: 150px;
+  display: grid;
+  place-items: center;
+  font-size: 2.4rem;
+  font-weight: 800;
+  color: var(--green);
+}
+@keyframes spin { to { transform: rotate(360deg); } }
+
+.main h2 {
+  font-size: clamp(2.4rem, 5vw, 4rem);
+  font-weight: 800;
+  letter-spacing: -0.04em;
+  margin: 30px 0 6px;
+  line-height: 1;
+}
+.sub { color: var(--grey); margin-bottom: 26px; }
+
+.demo-form { display: grid; gap: 10px; margin-bottom: 14px; }
+.demo-form label.mono { margin-top: 8px; color: var(--grey); }
+
+.main input[type="text"], .main input[type="email"], .main input[type="password"] {
+  width: 100%;
+  background: transparent;
+  border: 0;
+  border-bottom: 1px solid var(--text);
+  color: var(--text);
+  padding: 12px 0;
+  font: inherit;
+  outline: none;
+  transition: border-color 0.3s;
+}
+.main input:focus { border-color: var(--green); }
+.main input:invalid:not(:placeholder-shown) { border-color: #d64a3a; }   /* red only after typing */
+
+.password-box { position: relative; }
+.password-box button { position: absolute; right: 0; top: 12px; color: var(--grey); }
+
+.between { display: flex; justify-content: space-between; align-items: center; gap: 10px; flex-wrap: wrap; margin: 6px 0; font-size: 0.9rem; }
+.check { display: flex; gap: 8px; align-items: center; cursor: pointer; }
+.link { color: var(--green); font-weight: 800; }
+
+.main .btn { width: 100%; text-align: center; cursor: pointer; }
+.message { color: var(--green); min-height: 1.2em; font-size: 0.85rem; }
+
+.main details { border: 1px solid var(--line); border-radius: 18px; padding: 0 20px; margin-bottom: 14px; }
+.main details[open] { padding-bottom: 14px; }
+.main summary { font-size: 1rem; text-transform: none; padding: 16px 0; text-align: center; }
+
+.divider { text-align: center; color: var(--grey); margin: 10px 0; }
+.main .small { text-align: center; color: var(--grey); opacity: 1; margin-top: 8px; }
+
+/* ---------- Mobile ---------- */
+@media (max-width: 860px) {
+  .portal { grid-template-columns: 1fr; }
+  .copy { margin-top: 10px; }
+}

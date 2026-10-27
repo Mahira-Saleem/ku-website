@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>University of Karachi</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;800&family=Space+Mono&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Top bar -->
+  <header class="topbar">
+    <button id="menuBtn" class="mono">[ Menu ]</button>
+    <button id="themeBtn" class="mono">[ Dark ]</button>
+    <a href="#contact" class="mono">info@uok.edu.pk</a>
+  </header>
+
+  <!-- Full screen menu -->
+  <nav id="menu" class="menu">
+    <a href="#about">About</a>
+    <a href="#faculties">Faculties</a>
+    <a href="#finder">Program Finder</a>
+    <a href="#team">Leadership</a>
+    <a href="admission.html">Admission Now</a>
+    <a href="#contact">Contact</a>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero container" id="home">
+    <h1>
+      <span class="line"><span>University</span></span>
+      <span class="line"><span>of <em>Karachi</em></span></span>
+    </h1>
+    <div class="hero-bottom">
+      <p>Pakistan's leading public university, educating thinkers, builders and leaders since 1951.</p>
+      <div class="hero-actions">
+        <a href="admission.html" class="btn">Admission Now →</a>
+        <span class="mono">Scroll [↓]</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Moving text (pure CSS animation) -->
+  <div class="marquee">
+    <div class="marquee-track">
+      <span>What we study <b>???</b></span>
+      <span>What we study <b>???</b></span>
+      <span>What we study <b>???</b></span>
+      <span>What we study <b>???</b></span>
+    </div>
+  </div>
+
+  <!-- ABOUT -->
+  <section class="container" id="about">
+    <p class="mono">[About]</p>
+    <h2 class="reveal">Who we are</h2>
+    <p class="intro reveal">A large public university in the heart of Karachi, working across arts, sciences, law, pharmacy, education and business.</p>
+
+    <div class="facts">
+      <div class="reveal"><span class="mono">Based in</span><strong>Karachi</strong></div>
+      <div class="reveal"><span class="mono">Founded</span><strong class="count" data-end="1951">0</strong></div>
+      <div class="reveal"><span class="mono">Departments</span><strong class="count" data-end="50">0</strong></div>
+      <div class="reveal"><span class="mono">Students</span><strong class="count" data-end="40000">0</strong></div>
+    </div>
+  </section>
+
+  <!-- FACULTIES -->
+  <section class="container" id="faculties">
+    <p class="mono">[Faculties]</p>
+    <h2 class="reveal">Selected fields</h2>
+
+    <div class="tools">
+      <input type="search" id="search" placeholder="Search a faculty...">
+      <div class="filters">
+        <button class="chip active mono" data-filter="all">All</button>
+        <button class="chip mono" data-filter="arts">Arts</button>
+        <button class="chip mono" data-filter="science">Sciences</button>
+        <button class="chip mono" data-filter="professional">Professional</button>
+      </div>
+    </div>
+
+    <div id="facultyList">
+      <a href="#contact" class="row" data-type="science"><span class="mono">(01)</span><h3>Science</h3><p>Physics, Chemistry, Zoology, Biotechnology</p><i>→</i></a>
+      <a href="#contact" class="row" data-type="arts"><span class="mono">(02)</span><h3>Arts</h3><p>Urdu, English, History, Mass Communication</p><i>→</i></a>
+      <a href="#contact" class="row" data-type="professional"><span class="mono">(03)</span><h3>Pharmacy</h3><p>Pharm-D, Pharmacology, Pharmaceutics</p><i>→</i></a>
+      <a href="#contact" class="row" data-type="professional"><span class="mono">(04)</span><h3>Law</h3><p>LLB, LLM, Constitutional Law</p><i>→</i></a>
+      <a href="#contact" class="row" data-type="professional"><span class="mono">(05)</span><h3>Management</h3><p>BBA, MBA, Commerce, Public Administration</p><i>→</i></a>
+      <a href="#contact" class="row" data-type="arts"><span class="mono">(06)</span><h3>Education</h3><p>B.Ed, M.Ed, Special Education</p><i>→</i></a>
+      <a href="#contact" class="row" data-type="arts"><span class="mono">(07)</span><h3>Islamic Learning</h3><p>Islamic Studies, Arabic, Comparative Religion</p><i>→</i></a>
+      <a href="#contact" class="row" data-type="science"><span class="mono">(08)</span><h3>Computer Science</h3><p>BS CS, Software Engineering, Data Science</p><i>→</i></a>
+    </div>
+    <p id="noResult">No matching programs found.</p>
+  </section>
+
+  <!-- NEW FEATURE: PROGRAM FINDER -->
+  <section class="container" id="finder">
+    <p class="mono">[New] Program Finder</p>
+    <h2 class="reveal">Not sure<br>what to study?</h2>
+    <p class="intro">Answer 3 quick questions and we will suggest the faculties that fit you best.</p>
+
+    <div class="quiz" id="quiz">
+      <div class="question" data-q="1">
+        <h3>1. Which sounds like your kind of day?</h3>
+        <button class="option" data-points="science:2,pharmacy:2">Running experiments in a lab</button>
+        <button class="option" data-points="arts:2,law:1,islamic:1,education:1">Reading, writing and debating</button>
+        <button class="option" data-points="cs:3">Building apps and solving puzzles</button>
+        <button class="option" data-points="management:3,law:1">Planning, pitching and leading</button>
+      </div>
+      <div class="question" data-q="2">
+        <h3>2. What is your goal after graduating?</h3>
+        <button class="option" data-points="science:2,pharmacy:2">Become a researcher or health professional</button>
+        <button class="option" data-points="cs:3">Work in the tech industry</button>
+        <button class="option" data-points="management:3">Start or run a business</button>
+        <button class="option" data-points="education:3,arts:1,islamic:1">Teach and guide others</button>
+        <button class="option" data-points="law:3,arts:1">Work in law or public service</button>
+      </div>
+      <div class="question" data-q="3">
+        <h3>3. How do you like to work?</h3>
+        <button class="option" data-points="cs:1,arts:1,science:1">Alone, with deep focus</button>
+        <button class="option" data-points="management:1,education:1,cs:1">In teams, on projects</button>
+        <button class="option" data-points="education:2,pharmacy:1,law:1">With people, helping them</button>
+        <button class="option" data-points="science:2,pharmacy:1">Hands-on, practical work</button>
+      </div>
+
+      <div class="result" id="result">
+        <p class="mono">Your best matches</p>
+        <div id="resultList"></div>
+        <a href="admission.html" class="btn">Apply now →</a>
+        <button class="chip mono" id="retake">Retake quiz</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- LEADERSHIP -->
+  <section class="container" id="team">
+    <p class="mono">[Leadership]</p>
+    <h2 class="reveal">Our people</h2>
+    <div class="team">
+      <div class="reveal"><span class="mono">/001</span><h3>Vice Chancellor</h3><p>Leads the university and its academic vision.</p></div>
+      <div class="reveal"><span class="mono">/002</span><h3>Registrar</h3><p>Oversees records, policy and administration.</p></div>
+      <div class="reveal"><span class="mono">/003</span><h3>Controller of Exams</h3><p>Manages exams, results and transcripts.</p></div>
+    </div>
+  </section>
+
+  <!-- ADMISSIONS -->
+  <section class="container" id="admissions">
+    <p class="mono">[Admissions 2027]</p>
+    <h2 class="reveal">Apply in</h2>
+    <div class="countdown" id="countdown">
+      <div><strong>00</strong><span class="mono">Days</span></div>
+      <div><strong>00</strong><span class="mono">Hours</span></div>
+      <div><strong>00</strong><span class="mono">Mins</span></div>
+      <div><strong>00</strong><span class="mono">Secs</span></div>
+    </div>
+
+    <!-- details/summary opens and closes with no JavaScript -->
+    <details><summary>01 Create account</summary><p>Register on the portal with your CNIC and email.</p></details>
+    <details><summary>02 Pick programs</summary><p>Choose your preferred departments.</p></details>
+    <details><summary>03 Fee and documents</summary><p>Pay the voucher and upload transcripts.</p></details>
+    <details><summary>04 Test and merit</summary><p>Sit the entry test and check your merit position.</p></details>
+    <a href="admission.html" class="btn">Open admission portal →</a>
+  </section>
+
+  <!-- CONTACT -->
+  <section class="container" id="contact">
+    <p class="mono">[Contact]</p>
+    <h2 class="reveal">Get in touch</h2>
+    <a class="big-mail" href="mailto:info@uok.edu.pk">info@uok.edu.pk ↗</a>
+
+    <div class="contact-grid">
+      <p>University Road<br>Karachi 75270, Sindh, Pakistan</p>
+
+      <form id="form" novalidate>
+        <input type="text" id="name" placeholder="Full name">
+        <small></small>
+        <input type="email" id="email" placeholder="Email address">
+        <small></small>
+        <textarea id="message" rows="3" placeholder="Your message"></textarea>
+        <small></small>
+        <button type="submit" class="btn">Send message →</button>
+        <p id="success"></p>
+      </form>
+    </div>
+  </section>
+
+  <footer class="container">
+    <span class="mono">© 2026 University of Karachi - student concept project</span>
+    <a href="#home" class="mono">Back to top [↑]</a>
+  </footer>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script src="theme.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>

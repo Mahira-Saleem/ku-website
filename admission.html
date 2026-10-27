@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Admissions Portal - University of Karachi</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;800&family=Space+Mono&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="portal.css">
+</head>
+<body>
+  <button id="themeBtn" class="mono theme-fixed">[ Dark ]</button>
+
+  <main class="portal">
+
+    <!-- LEFT SIDE: information -->
+    <aside class="side">
+      <a href="index.html" class="mono back">← Back to website</a>
+
+      <div class="brand">
+        <span class="seal">KU</span>
+        <div>
+          <p class="mono">University of Karachi</p>
+          <strong>Admissions Portal</strong>
+        </div>
+      </div>
+
+      <h1>Undergraduate<br>Admissions<br>Portal</h1>
+
+      <p class="notice"><span class="mono">Notice</span><br>Sample notice: Fall 2027 admissions are open. Replace this text with the real announcement.</p>
+
+      <p class="mono label">Important links</p>
+      <!-- Links point to the official site. Replace with the exact pages you need. -->
+      <ul class="links">
+        <li><a href="https://www.uok.edu.pk/" target="_blank" rel="noopener">Important links for Undergraduate Admissions <i>↗</i></a></li>
+        <li><a href="https://www.uok.edu.pk/" target="_blank" rel="noopener">Portal creation guideline <i>↗</i></a></li>
+        <li><a href="https://www.uok.edu.pk/" target="_blank" rel="noopener">Form submission guidelines <i>↗</i></a></li>
+        <li><a href="https://www.uok.edu.pk/" target="_blank" rel="noopener">Admission schedule <b class="badge mono">New</b> <i>↗</i></a></li>
+        <li><a href="https://www.uok.edu.pk/" target="_blank" rel="noopener">Instructions for foreign students <i>↗</i></a></li>
+      </ul>
+
+      <!-- New feature link -->
+      <a href="index.html#finder" class="btn light">Not sure? Try Program Finder →</a>
+
+      <p class="small"><a href="https://www.uok.edu.pk/" target="_blank" rel="noopener">Frequently asked questions</a></p>
+
+      <p class="mono copy">© 2026 University of Karachi - student concept</p>
+    </aside>
+
+    <!-- RIGHT SIDE: sign in -->
+    <section class="main">
+
+      <!-- Rotating ring logo made with SVG text -->
+      <svg class="ring" viewBox="0 0 200 200" aria-hidden="true">
+        <defs><path id="circle" d="M100,100 m-80,0 a80,80 0 1,1 160,0 a80,80 0 1,1 -160,0"/></defs>
+        <text><textPath href="#circle">75 YEARS OF EXCELLENCE ✦ EST. 1951 ✦ KARACHI ✦</textPath></text>
+      </svg>
+      <span class="ring-center">KU</span>
+
+      <h2>Welcome back</h2>
+      <p class="sub">Sign in with the CNIC you registered with.</p>
+
+      <form class="demo-form" id="loginForm">
+        <label class="mono" for="cnic">CNIC</label>
+        <input type="text" id="cnic" class="cnic" placeholder="42000-0000000-0" inputmode="numeric" pattern="\d{5}-\d{7}-\d" title="Format: 42000-0000000-0" required>
+
+        <label class="mono" for="password">Password</label>
+        <div class="password-box">
+          <input type="password" id="password" placeholder="••••••••" minlength="6" required>
+          <button type="button" class="mono" id="showPass">Show</button>
+        </div>
+
+        <div class="between">
+          <label class="check"><input type="checkbox"> Remember me</label>
+          <a href="#recover" class="link">Forgot password?</a>
+        </div>
+
+        <button type="submit" class="btn">Sign in →</button>
+        <p class="message"></p>
+      </form>
+
+      <!-- Recover account (opens without JavaScript) -->
+      <details id="recover">
+        <summary>Help me recover my account</summary>
+        <form class="demo-form">
+          <input type="text" class="cnic" placeholder="Your CNIC" pattern="\d{5}-\d{7}-\d" required>
+          <input type="email" placeholder="Registered email" required>
+          <button type="submit" class="btn">Send recovery link</button>
+          <p class="message"></p>
+        </form>
+      </details>
+
+      <p class="mono divider">New here</p>
+
+      <details>
+        <summary>Sign-up (create new account)</summary>
+        <form class="demo-form">
+          <input type="text" placeholder="Full name" minlength="3" required>
+          <input type="text" class="cnic" placeholder="CNIC 42000-0000000-0" pattern="\d{5}-\d{7}-\d" required>
+          <input type="email" placeholder="Email address" required>
+          <input type="password" placeholder="Choose a password" minlength="6" required>
+          <button type="submit" class="btn">Create account</button>
+          <p class="message"></p>
+        </form>
+      </details>
+
+      <p class="small">No confirmation email is needed at the moment. You can sign in as soon as you have registered.</p>
+    </section>
+  </main>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="theme.js"></script>
+  <script src="portal.js"></script>
+</body>
+</html>
